@@ -72,7 +72,7 @@ def get_user(name):
     #     'email': data['email']
     # }
     # return mongo.find_all_by_name(name)
-    return mongo.find_one_by_name(name)
+    return mongo.find_one_by_name(name)sasdfasdf
 
 
 @app.route("/universities/user", methods=["GET"])

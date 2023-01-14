@@ -1,0 +1,47 @@
+version: '3'
+services:
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: mydb
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
+  # api:
+  #   container_name: flask-container
+  #   build: .
+  #   entrypoint: python app.py
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - '5000:5000'
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
+  # redis:
+  #   image: redis
+  #   container_name: redis-container
+  #   ports:
+  #     - "6379:6379"
+  # db:
+  #   image: postgres:13-alpine
+  #   container_name: db-container
+  #   volumes:
+  #     - ./postgres_data:/var/lib/postgresql/data/
+  #   environment:
+  #     - POSTGRES_USER=root
+  #     - POSTGRES_PASSWORD=root
+  #     - POSTGRES_DB=mydb
+  #   ports:
+  #     - "5432:5432"
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5

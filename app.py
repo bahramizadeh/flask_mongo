@@ -71,8 +71,8 @@ def get_user(name):
     #     'password': data['password'],
     #     'email': data['email']
     # }
-    return mongo.find_all_by_name(name)
-    # return mongo.find_one_by_name(name)
+    # return mongo.find_all_by_name(name)
+    return mongo.find_one_by_name(name)
 
 
 @app.route("/universities/user", methods=["GET"])

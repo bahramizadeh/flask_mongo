@@ -42,7 +42,7 @@ def new_user():
     #     'password': data['password'],
     #     'email': data['email']
     # }
-
+    print("salam")
     return mongo.save_to_db(data)
 
 

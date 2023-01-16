@@ -28,3 +28,14 @@ class MyMongo(PyMongo):
         #     result.append(user)
 
         return result
+
+    def find_all(self):
+        users = self.db.users.find()
+        result = {}
+        index = 1
+        for user in users: 
+            user.pop('_id')
+            result[index] = user
+            index += 1
+
+        return result

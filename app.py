@@ -75,12 +75,11 @@ def get_user(name):
     return mongo.find_one_by_name(name)
 
 
-@app.route("/universities/user", methods=["GET"])
+@app.route("/universities/user/all", methods=["GET"])
 def get_all_users():
-    data = User.all_users()
-    print(data)
-    return useremail_schema_multi.dump(data)
-    
+    # data = User.all_users()
+    # return useremail_schema_multi.dump(data)
+    return mongo.find_all()
 
 # db.init_app(app)
 # with app.app_context():
@@ -89,3 +88,4 @@ def get_all_users():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
+

@@ -18,13 +18,13 @@ useremail_schema_multi = UserEmailSchema(many=True)
 mongo = MyMongo(app)
 
 
-# @app.route("/universities")
+@app.route("/universities")
 # @cache.cached(timeout=100, query_string=True)
-# def get_universities():
-#     API_URL = "http://universities.hipolabs.com/search?country="
-#     search = request.args.get('country')
-#     r = requests.get(f"{API_URL}{search}")
-#     return jsonify(r.json())
+def get_universities():
+    API_URL = "http://universities.hipolabs.com/search?country="
+    search = request.args.get('country')
+    r = requests.get(f"{API_URL}{search}")
+    return jsonify(r.json())
 
 
 @app.route("/universities/user", methods=["POST"])
